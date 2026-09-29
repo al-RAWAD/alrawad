@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,480 +8,1577 @@
 <title>رواد للعقارات | أراضي للبيع في صحار</title>
 
 <style>
+
+/* =========================
+   الإعدادات العامة
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Tahoma,Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f5f7f8;
-    color:#17221d;
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:#f7f9fc;
+    color:#172033;
+    overflow-x:hidden;
 }
 
-/* الهيدر */
-header{
-    background:linear-gradient(135deg,#073b2a,#0b6849);
+:root{
+    --blue:#0757a0;
+    --dark-blue:#063b70;
+    --red:#d71920;
+    --dark-red:#a80f15;
+    --white:#ffffff;
+    --light:#f4f7fb;
+    --text:#172033;
+    --gray:#687386;
+    --border:#e3e8ef;
+}
+
+
+/* =========================
+   شريط علوي
+========================= */
+
+.topbar{
+    background:var(--dark-blue);
     color:white;
-    padding:20px 7%;
+    padding:9px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    font-size:14px;
+}
+
+.topbar span{
+    opacity:.95;
+}
+
+
+/* =========================
+   الهيدر
+========================= */
+
+header{
     position:sticky;
     top:0;
-    z-index:1000;
-    box-shadow:0 4px 20px #0002;
+    z-index:999;
+
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+    padding:16px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.logo span{
-    color:#d9b45b;
-}
+.logo-icon{
+    width:48px;
+    height:48px;
 
-nav a{
+    border-radius:13px;
+
+    background:
+    linear-gradient(135deg,
+    var(--blue),
+    var(--red));
+
     color:white;
-    text-decoration:none;
-    margin-right:25px;
-    font-weight:bold;
-}
 
-nav a:hover{
-    color:#d9b45b;
-}
-
-/* الرئيسية */
-.hero{
-    min-height:480px;
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:50px 20px;
-    background:
-    linear-gradient(#063b2add,#063b2add),
-    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    color:white;
+
+    font-size:25px;
+    font-weight:bold;
+
+    box-shadow:0 8px 20px #0757a033;
 }
 
-.hero h1{
-    font-size:48px;
-    margin-bottom:20px;
+.logo-text{
+    line-height:1.2;
 }
 
-.hero p{
-    font-size:20px;
-    margin-bottom:30px;
+.logo-text h1{
+    font-size:22px;
+    color:var(--dark-blue);
 }
 
-.btn{
-    display:inline-block;
-    background:#d9b45b;
-    color:#13241d;
-    padding:14px 28px;
-    border-radius:10px;
+.logo-text p{
+    font-size:11px;
+    color:var(--red);
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
     text-decoration:none;
+    color:#25334a;
     font-weight:bold;
     transition:.3s;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px #0004;
+nav a:hover{
+    color:var(--red);
 }
 
-/* العناوين */
-.section{
-    padding:70px 7%;
+
+/* =========================
+   زر واتساب
+========================= */
+
+.header-whatsapp{
+    text-decoration:none;
+    color:white;
+
+    background:var(--red);
+
+    padding:12px 20px;
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    box-shadow:0 7px 18px #d7192030;
 }
 
-.title{
-    text-align:center;
-    margin-bottom:40px;
+.header-whatsapp:hover{
+    background:var(--dark-red);
+    transform:translateY(-2px);
 }
 
-.title h2{
-    font-size:34px;
-    color:#073b2a;
-}
 
-.title p{
-    margin-top:10px;
-    color:#68736e;
-}
+/* =========================
+   Hero
+========================= */
 
-/* البحث */
-.search-box{
-    max-width:850px;
-    margin:0 auto 40px;
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 5px 25px #00000012;
+.hero{
+    min-height:650px;
+
+    position:relative;
+
     display:flex;
-    gap:12px;
+    align-items:center;
+
+    padding:70px 7%;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        100deg,
+        rgba(3,42,80,.96),
+        rgba(7,87,160,.82),
+        rgba(215,25,32,.48)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
 }
 
-.search-box input,
-.search-box select{
-    flex:1;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    outline:none;
+.hero-content{
+    max-width:720px;
+
+    animation:heroIn 1s ease;
 }
 
-/* العقارات */
-.properties{
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-badge{
+    display:inline-block;
+
+    padding:8px 15px;
+
+    background:#ffffff1c;
+    border:1px solid #ffffff45;
+
+    border-radius:30px;
+
+    margin-bottom:22px;
+
+    backdrop-filter:blur(10px);
+}
+
+.hero h2{
+    font-size:58px;
+    line-height:1.15;
+
+    margin-bottom:20px;
+}
+
+.hero h2 span{
+    color:#ff4b51;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.9;
+
+    color:#f2f5fa;
+
+    margin-bottom:32px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    padding:15px 25px;
+
+    border-radius:11px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--red);
+    color:white;
+
+    box-shadow:0 10px 25px #0003;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    background:#ef2229;
+}
+
+.btn-secondary{
+    background:white;
+    color:var(--dark-blue);
+}
+
+.btn-secondary:hover{
+    transform:translateY(-4px);
+}
+
+
+/* =========================
+   إحصائيات
+========================= */
+
+.stats{
+    position:relative;
+
+    margin:-55px 7% 0;
+
+    z-index:5;
+
     display:grid;
     grid-template-columns:repeat(3,1fr);
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 45px #0a23401a;
+
+    overflow:hidden;
+}
+
+.stat{
+    text-align:center;
+
+    padding:28px 15px;
+
+    border-left:1px solid var(--border);
+}
+
+.stat:last-child{
+    border-left:none;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:30px;
+
+    color:var(--blue);
+
+    margin-bottom:5px;
+}
+
+.stat span{
+    color:var(--gray);
+}
+
+
+/* =========================
+   الأقسام
+========================= */
+
+.section{
+    padding:100px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title .small{
+    color:var(--red);
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-size:38px;
+    color:var(--dark-blue);
+
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+
+/* =========================
+   البحث
+========================= */
+
+.search-area{
+    max-width:1050px;
+
+    margin:0 auto 45px;
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 35px #0a234012;
+
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr auto;
+
+    gap:12px;
+
+    border:1px solid var(--border);
+}
+
+.search-input,
+.search-select{
+    border:1px solid var(--border);
+
+    padding:15px;
+
+    border-radius:11px;
+
+    outline:none;
+
+    font-size:15px;
+
+    background:#fbfcfe;
+}
+
+.search-input:focus,
+.search-select:focus{
+    border-color:var(--blue);
+
+    box-shadow:0 0 0 3px #0757a012;
+}
+
+.search-btn{
+    border:none;
+
+    background:var(--blue);
+
+    color:white;
+
+    padding:0 25px;
+
+    border-radius:11px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.search-btn:hover{
+    background:var(--dark-blue);
+}
+
+
+/* =========================
+   العقارات
+========================= */
+
+.properties{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:25px;
 }
 
 .card{
     background:white;
-    border-radius:16px;
+
+    border-radius:18px;
+
     overflow:hidden;
-    box-shadow:0 6px 25px #00000012;
-    transition:.3s;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 8px 30px #0a23400e;
+
+    transition:.4s;
+
+    position:relative;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 30px #00000020;
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px #0a234020;
 }
 
-.card img{
+.card-image{
+    position:relative;
+    height:245px;
+    overflow:hidden;
+}
+
+.card-image img{
     width:100%;
-    height:220px;
+    height:100%;
+
     object-fit:cover;
+
+    transition:.5s;
+}
+
+.card:hover .card-image img{
+    transform:scale(1.07);
+}
+
+.status{
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    background:var(--red);
+
+    color:white;
+
+    padding:7px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.location{
+    position:absolute;
+
+    bottom:15px;
+    right:15px;
+
+    background:#0009;
+
+    color:white;
+
+    padding:7px 12px;
+
+    border-radius:8px;
+
+    backdrop-filter:blur(5px);
 }
 
 .card-content{
-    padding:20px;
+    padding:22px;
 }
 
-.badge{
-    display:inline-block;
-    background:#e7f3ed;
-    color:#08704b;
-    padding:6px 10px;
-    border-radius:20px;
-    font-size:13px;
-    margin-bottom:12px;
+.card-content h3{
+    font-size:21px;
+
+    color:var(--dark-blue);
+
+    margin-bottom:15px;
 }
 
-.card h3{
-    font-size:22px;
-    margin-bottom:12px;
+.details{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+    margin-bottom:18px;
 }
 
-.info{
-    color:#666;
-    line-height:2;
+.detail{
+    background:#f6f8fb;
+
+    padding:10px;
+
+    border-radius:8px;
 }
 
 .price{
-    color:#08704b;
-    font-size:23px;
+    color:var(--red);
+
+    font-size:24px;
+
     font-weight:bold;
-    margin:15px 0;
+
+    margin-bottom:18px;
 }
 
-.whatsapp{
+.contact-property{
     display:block;
-    background:#25D366;
-    color:white;
+
     text-align:center;
-    padding:13px;
-    border-radius:9px;
+
+    background:var(--blue);
+
+    color:white;
+
     text-decoration:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.contact-property:hover{
+    background:var(--dark-blue);
+}
+
+
+/* =========================
+   لماذا نحن
+========================= */
+
+.why{
+    background:
+    linear-gradient(
+        135deg,
+        #063b70,
+        #0757a0
+    );
+
+    color:white;
+}
+
+.why .section-title h2{
+    color:white;
+}
+
+.why .section-title p{
+    color:#dcecff;
+}
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.feature{
+    background:#ffffff12;
+
+    border:1px solid #ffffff20;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.feature:hover{
+    background:#ffffff1c;
+
+    transform:translateY(-6px);
+}
+
+.feature-icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 18px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--red);
+
+    font-size:28px;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#dbe8f5;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   عن رواد
+========================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.about-image{
+    height:420px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px #0a234020;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-content .small{
+    color:var(--red);
     font-weight:bold;
 }
 
-/* من نحن */
-.about{
-    background:#073b2a;
-    color:white;
-    text-align:center;
+.about-content h2{
+    color:var(--dark-blue);
+
+    font-size:40px;
+
+    margin:12px 0 20px;
 }
 
-.about h2{
-    font-size:32px;
+.about-content p{
+    color:var(--gray);
+
+    line-height:2;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   التواصل
+========================= */
+
+.contact-section{
+    background:#f0f5fa;
+}
+
+.contact-box{
+    max-width:900px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:0 15px 45px #0a234015;
+
+    border-top:5px solid var(--red);
+}
+
+.contact-box h2{
+    color:var(--dark-blue);
+
+    font-size:34px;
+
+    margin-bottom:10px;
+}
+
+.contact-box p{
+    color:var(--gray);
+
     margin-bottom:20px;
 }
 
-.about p{
-    max-width:800px;
-    margin:auto;
-    line-height:2;
-    font-size:18px;
-}
-
-/* التواصل */
-.contact{
-    text-align:center;
-}
-
-.contact-card{
-    max-width:600px;
-    margin:auto;
-    background:white;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 5px 25px #0001;
-}
-
 .phone{
-    font-size:28px;
-    color:#08704b;
+    font-size:34px;
+
+    color:var(--blue);
+
     font-weight:bold;
-    margin:20px;
+
+    direction:ltr;
+
+    margin-bottom:25px;
 }
 
-/* الفوتر */
-footer{
-    background:#061e16;
+.big-whatsapp{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#25D366;
+
     color:white;
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:11px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.big-whatsapp:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px #25d36640;
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer{
+    background:#061d35;
+
+    color:white;
+
+    padding:40px 7%;
+
     text-align:center;
-    padding:25px;
 }
 
-footer span{
-    color:#d9b45b;
+.footer-logo{
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
 }
 
-/* الجوال */
-@media(max-width:900px){
+.footer-logo span{
+    color:#ff3b42;
+}
+
+footer p{
+    color:#b8c6d5;
+
+    margin-bottom:20px;
+}
+
+.footer-line{
+    height:1px;
+
+    background:#ffffff15;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   واتساب عائم
+========================= */
+
+.float-whatsapp{
+    position:fixed;
+
+    left:22px;
+    bottom:22px;
+
+    width:62px;
+    height:62px;
+
+    background:#25D366;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:29px;
+
+    z-index:1000;
+
+    box-shadow:
+    0 8px 25px #25d36655;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:1000px){
+
     .properties{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
-    .hero h1{
-        font-size:38px;
+    .features{
+        grid-template-columns:
+        repeat(2,1fr);
     }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .search-area{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .search-btn{
+        min-height:50px;
+    }
+
 }
 
-@media(max-width:600px){
-    header{
-        flex-direction:column;
-        gap:15px;
+@media(max-width:700px){
+
+    .topbar{
+        justify-content:center;
+        text-align:center;
     }
 
-    nav a{
-        margin:0 7px;
-        font-size:13px;
+    header{
+        padding:13px 5%;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .header-whatsapp{
+        padding:10px 13px;
+        font-size:12px;
     }
 
     .hero{
-        min-height:420px;
+        min-height:570px;
+        padding:50px 5%;
+        text-align:center;
     }
 
-    .hero h1{
-        font-size:32px;
+    .hero h2{
+        font-size:38px;
     }
 
     .hero p{
         font-size:16px;
     }
 
-    .search-box{
-        flex-direction:column;
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .stats{
+        margin:-35px 5% 0;
+
+        grid-template-columns:1fr;
+
+        border-radius:15px;
+    }
+
+    .stat{
+        border-left:none;
+
+        border-bottom:1px solid var(--border);
+    }
+
+    .stat:last-child{
+        border-bottom:none;
+    }
+
+    .section{
+        padding:70px 5%;
+    }
+
+    .section-title h2{
+        font-size:30px;
     }
 
     .properties{
         grid-template-columns:1fr;
     }
 
-    .section{
-        padding:50px 5%;
+    .features{
+        grid-template-columns:1fr;
     }
+
+    .search-area{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        height:300px;
+    }
+
+    .about-content h2{
+        font-size:32px;
+    }
+
+    .contact-box{
+        padding:30px 20px;
+    }
+
+    .phone{
+        font-size:27px;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- الشريط العلوي -->
+
+<div class="topbar">
+    <span>📍 أراضي وعقارات للبيع في صحار</span>
+    <span>📞 96999077</span>
+</div>
+
+
+<!-- الهيدر -->
+
 <header>
-    <div class="logo">رواد <span>للعقارات</span></div>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ر
+        </div>
+
+        <div class="logo-text">
+            <h1>رواد للعقارات</h1>
+            <p>عقارات صحار</p>
+        </div>
+
+    </div>
+
 
     <nav>
         <a href="#home">الرئيسية</a>
         <a href="#lands">الأراضي</a>
+        <a href="#why">لماذا نحن</a>
         <a href="#about">من نحن</a>
-        <a href="#contact">تواصل معنا</a>
+        <a href="#contact">تواصل</a>
     </nav>
+
+
+    <a
+        class="header-whatsapp"
+        href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20الأراضي"
+        target="_blank">
+
+        واتساب 💬
+
+    </a>
+
 </header>
 
+
+
+<!-- الرئيسية -->
+
 <section class="hero" id="home">
-    <div>
-        <h1>رواد للعقارات</h1>
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🏠 عقارات موثوقة في صحار
+        </div>
+
+        <h2>
+            اكتشف أرضك<br>
+            <span>المناسبة في صحار</span>
+        </h2>
 
         <p>
-            أراضي مميزة للبيع في صحار<br>
-            اختر أرضك وتواصل معنا مباشرة
+            رواد للعقارات يوفر لك مجموعة من الأراضي
+            المعروضة للبيع في صحار مع سهولة التواصل
+            والاستفسار مباشرة.
         </p>
 
-        <a href="#lands" class="btn">تصفح الأراضي</a>
+        <div class="hero-buttons">
+
+            <a href="#lands" class="btn btn-primary">
+                استعرض الأراضي
+            </a>
+
+            <a
+                href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بمعرفة%20الأراضي%20المتوفرة"
+                target="_blank"
+                class="btn btn-secondary">
+
+                تواصل معنا
+
+            </a>
+
+        </div>
+
     </div>
+
 </section>
+
+
+
+<!-- الإحصائيات -->
+
+<div class="stats">
+
+    <div class="stat">
+        <strong>صحار</strong>
+        <span>منطقة العمل</span>
+    </div>
+
+    <div class="stat">
+        <strong>24/7</strong>
+        <span>استقبال الاستفسارات</span>
+    </div>
+
+    <div class="stat">
+        <strong>96999077</strong>
+        <span>واتساب مباشر</span>
+    </div>
+
+</div>
+
+
+
+<!-- الأراضي -->
 
 <section class="section" id="lands">
 
-    <div class="title">
-        <h2>الأراضي المتوفرة</h2>
-        <p>اكتشف الأراضي المعروضة للبيع في صحار</p>
+    <div class="section-title">
+
+        <div class="small">
+            العقارات المتوفرة
+        </div>
+
+        <h2>
+            أراضي للبيع في صحار
+        </h2>
+
+        <p>
+            اختر الأرض المناسبة لك وتواصل معنا مباشرة
+        </p>
+
     </div>
 
-    <div class="search-box">
+
+    <!-- البحث -->
+
+    <div class="search-area">
+
         <input
-            type="text"
+            class="search-input"
             id="search"
-            placeholder="ابحث عن الأرض أو المنطقة..."
-            onkeyup="searchLands()"
-        >
+            type="text"
+            placeholder="🔎 ابحث عن الأرض أو المنطقة..."
+            onkeyup="searchLands()">
 
-        <select id="area" onchange="searchLands()">
-            <option value="">جميع المناطق</option>
-            <option value="صحار">صحار</option>
-            <option value="الحويل">الحويل</option>
-            <option value="الهمبار">الهمبار</option>
+
+        <select
+            class="search-select"
+            id="area"
+            onchange="searchLands()">
+
+            <option value="">
+                جميع المناطق
+            </option>
+
+            <option value="صحار">
+                صحار
+            </option>
+
+            <option value="الحويل">
+                الحويل
+            </option>
+
+            <option value="الهمبار">
+                الهمبار
+            </option>
+
         </select>
+
+
+        <button
+            class="search-btn"
+            onclick="searchLands()">
+
+            بحث
+
+        </button>
+
     </div>
+
+
+
+    <!-- البطاقات -->
 
     <div class="properties" id="properties">
 
-        <!-- الأرض الأولى -->
-        <div class="card" data-name="أرض صحار" data-area="صحار">
 
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80">
+        <!-- أرض 1 -->
+
+        <div
+            class="card"
+            data-name="أرض سكنية صحار"
+            data-area="صحار">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=90"
+                alt="أرض للبيع في صحار">
+
+                <div class="status">
+                    متاحة للبيع
+                </div>
+
+                <div class="location">
+                    📍 صحار
+                </div>
+
+            </div>
+
 
             <div class="card-content">
 
-                <span class="badge">متاحة للبيع</span>
+                <h3>
+                    أرض سكنية مميزة في صحار
+                </h3>
 
-                <h3>أرض سكنية في صحار</h3>
 
-                <div class="info">
-                    📍 الموقع: صحار<br>
-                    📐 المساحة: 600 م²
+                <div class="details">
+
+                    <div class="detail">
+                        📐 600 م²
+                    </div>
+
+                    <div class="detail">
+                        🏠 سكني
+                    </div>
+
+                    <div class="detail">
+                        📍 صحار
+                    </div>
+
+                    <div class="detail">
+                        📄 متوفرة
+                    </div>
+
                 </div>
+
 
                 <div class="price">
-                    25,000 ريال عماني
+                    25,000 ر.ع
                 </div>
 
-                <a class="whatsapp"
-                   href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20أرض%20صحار"
-                   target="_blank">
-                    💬 تواصل عبر واتساب
+
+                <a
+                    class="contact-property"
+                    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20الأرض%20السكنية%20في%20صحار"
+                    target="_blank">
+
+                    💬 اسأل عن الأرض
+
                 </a>
 
             </div>
+
         </div>
 
 
-        <!-- الأرض الثانية -->
-        <div class="card" data-name="أرض الحويل" data-area="الحويل">
 
-            <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80">
+        <!-- أرض 2 -->
+
+        <div
+            class="card"
+            data-name="أرض الحويل"
+            data-area="الحويل">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1000&q=90"
+                alt="أرض للبيع في الحويل">
+
+                <div class="status">
+                    متاحة للبيع
+                </div>
+
+                <div class="location">
+                    📍 الحويل
+                </div>
+
+            </div>
+
 
             <div class="card-content">
 
-                <span class="badge">متاحة للبيع</span>
+                <h3>
+                    أرض سكنية في الحويل
+                </h3>
 
-                <h3>أرض سكنية في الحويل</h3>
 
-                <div class="info">
-                    📍 الموقع: الحويل<br>
-                    📐 المساحة: 500 م²
+                <div class="details">
+
+                    <div class="detail">
+                        📐 500 م²
+                    </div>
+
+                    <div class="detail">
+                        🏠 سكني
+                    </div>
+
+                    <div class="detail">
+                        📍 الحويل
+                    </div>
+
+                    <div class="detail">
+                        📄 متوفرة
+                    </div>
+
                 </div>
+
 
                 <div class="price">
-                    20,000 ريال عماني
+                    20,000 ر.ع
                 </div>
 
-                <a class="whatsapp"
-                   href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20أرض%20الحويل"
-                   target="_blank">
-                    💬 تواصل عبر واتساب
+
+                <a
+                    class="contact-property"
+                    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20أرض%20الحويل"
+                    target="_blank">
+
+                    💬 اسأل عن الأرض
+
                 </a>
 
             </div>
+
         </div>
 
 
-        <!-- الأرض الثالثة -->
-        <div class="card" data-name="أرض الهمبار" data-area="الهمبار">
 
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+        <!-- أرض 3 -->
+
+        <div
+            class="card"
+            data-name="أرض الهمبار"
+            data-area="الهمبار">
+
+            <div class="card-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=90"
+                alt="أرض للبيع في الهمبار">
+
+                <div class="status">
+                    متاحة للبيع
+                </div>
+
+                <div class="location">
+                    📍 الهمبار
+                </div>
+
+            </div>
+
 
             <div class="card-content">
 
-                <span class="badge">متاحة للبيع</span>
+                <h3>
+                    أرض مميزة في الهمبار
+                </h3>
 
-                <h3>أرض في الهمبار</h3>
 
-                <div class="info">
-                    📍 الموقع: الهمبار<br>
-                    📐 المساحة: 700 م²
+                <div class="details">
+
+                    <div class="detail">
+                        📐 700 م²
+                    </div>
+
+                    <div class="detail">
+                        🏠 سكني
+                    </div>
+
+                    <div class="detail">
+                        📍 الهمبار
+                    </div>
+
+                    <div class="detail">
+                        📄 متوفرة
+                    </div>
+
                 </div>
+
 
                 <div class="price">
-                    28,000 ريال عماني
+                    28,000 ر.ع
                 </div>
 
-                <a class="whatsapp"
-                   href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20أرض%20الهمبار"
-                   target="_blank">
-                    💬 تواصل عبر واتساب
+
+                <a
+                    class="contact-property"
+                    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20أرض%20الهمبار"
+                    target="_blank">
+
+                    💬 اسأل عن الأرض
+
                 </a>
 
             </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- لماذا نحن -->
+
+<section class="section why" id="why">
+
+    <div class="section-title">
+
+        <div class="small">
+            رواد للعقارات
+        </div>
+
+        <h2>
+            لماذا تتواصل معنا؟
+        </h2>
+
+        <p>
+            نسهّل عليك الوصول إلى الأرض المناسبة
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📍
+            </div>
+
+            <h3>
+                موقع واضح
+            </h3>
+
+            <p>
+                أراضي في صحار مع معلومات واضحة
+                عن المنطقة والمساحة.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                تواصل سريع
+            </h3>
+
+            <p>
+                تواصل معنا مباشرة عبر واتساب
+                للاستفسار عن أي أرض.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🏠
+            </div>
+
+            <h3>
+                خيارات متعددة
+            </h3>
+
+            <p>
+                تابع الأراضي المتوفرة واختر
+                ما يناسب احتياجاتك.
+            </p>
+
         </div>
 
     </div>
+
 </section>
 
+
+
+<!-- من نحن -->
 
 <section class="section about" id="about">
 
-    <h2>من نحن؟</h2>
+    <div class="about-image">
 
-    <p>
-        رواد للعقارات مكتب متخصص في عرض الأراضي والعقارات
-        في صحار. نسعى لتوفير خيارات عقارية مناسبة
-        مع سهولة التواصل والاستفسار عن العقارات المعروضة.
-    </p>
+        <img
+        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=90"
+        alt="رواد للعقارات">
 
-</section>
-
-
-<section class="section contact" id="contact">
-
-    <div class="title">
-        <h2>تواصل معنا</h2>
-        <p>للاستفسار عن الأراضي المتوفرة</p>
     </div>
 
-    <div class="contact-card">
 
-        <h3>رواد للعقارات</h3>
+    <div class="about-content">
 
-        <div class="phone">
-            96999077
+        <div class="small">
+            من نحن
         </div>
 
-        <a class="whatsapp"
-           href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20الأراضي%20المتوفرة"
-           target="_blank">
-            💬 مراسلتنا على واتساب
+        <h2>
+            رواد للعقارات
+        </h2>
+
+        <p>
+            رواد للعقارات متخصصون في عرض الأراضي
+            والعقارات في صحار، ونسعى إلى جعل عملية
+            البحث عن العقار أسهل من خلال عرض
+            المعلومات والتواصل المباشر.
+        </p>
+
+
+        <a
+            href="#contact"
+            class="btn btn-primary">
+
+            تواصل معنا
+
         </a>
 
     </div>
@@ -488,42 +1586,130 @@ footer span{
 </section>
 
 
+
+<!-- التواصل -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="contact-box">
+
+        <h2>
+            جاهز تعرف المزيد؟
+        </h2>
+
+        <p>
+            تواصل معنا عبر واتساب للاستفسار
+            عن الأراضي المتوفرة.
+        </p>
+
+
+        <div class="phone">
+            96999077
+        </div>
+
+
+        <a
+            class="big-whatsapp"
+            href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20الأراضي%20المتوفرة"
+            target="_blank">
+
+            💬 تواصل معنا عبر واتساب
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- الفوتر -->
+
 <footer>
-    © 2026 <span>رواد للعقارات</span> — جميع الحقوق محفوظة
+
+    <div class="footer-logo">
+        رواد <span>للعقارات</span>
+    </div>
+
+    <p>
+        أراضي وعقارات للبيع في صحار
+    </p>
+
+    <div class="footer-line"></div>
+
+    <small>
+        © 2026 رواد للعقارات — جميع الحقوق محفوظة
+    </small>
+
 </footer>
+
+
+
+<!-- واتساب عائم -->
+
+<a
+    class="float-whatsapp"
+    href="https://wa.me/96896999077?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20الأراضي"
+    target="_blank"
+    aria-label="واتساب">
+
+    💬
+
+</a>
+
 
 
 <script>
 
+/* =========================
+   البحث والفلترة
+========================= */
+
 function searchLands(){
 
-    let search =
-        document.getElementById("search").value.toLowerCase();
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
 
-    let area =
-        document.getElementById("area").value;
+    const area =
+        document
+        .getElementById("area")
+        .value;
 
-    let cards =
-        document.querySelectorAll(".card");
+    const cards =
+        document
+        .querySelectorAll(".card");
 
-    cards.forEach(function(card){
 
-        let name =
-            card.dataset.name.toLowerCase();
+    cards.forEach(card => {
 
-        let cardArea =
+        const name =
+            card.dataset.name
+            .toLowerCase();
+
+        const cardArea =
             card.dataset.area;
 
-        let matchSearch =
+
+        const searchMatch =
             name.includes(search);
 
-        let matchArea =
-            area === "" || cardArea === area;
+        const areaMatch =
+            area === "" ||
+            cardArea === area;
 
-        if(matchSearch && matchArea){
+
+        if(searchMatch && areaMatch){
+
             card.style.display = "";
+
         }else{
+
             card.style.display = "none";
+
         }
 
     });
@@ -531,6 +1717,7 @@ function searchLands(){
 }
 
 </script>
+
 
 </body>
 </html>
